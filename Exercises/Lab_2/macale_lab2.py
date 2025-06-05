@@ -176,7 +176,7 @@ def round_robin(processes, quantum=4):
 
     print_avg(waiting_times, turnaround_times, gantt)
 
-# ------------------ Helper: Print Averages and Gantt Chart ------------------
+# ------------------ Print Averages and Gantt Chart ------------------
 def print_avg(waiting_times, turnaround_times, gantt):
     print(f"\nAverage Waiting Time: {sum(waiting_times)/len(waiting_times):.2f}")
     print(f"Average Turnaround Time: {sum(turnaround_times)/len(turnaround_times):.2f}")

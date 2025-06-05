@@ -64,7 +64,6 @@ def simulate_allocation_with_safety(strategy_func, jobs: List[Job], memory_templ
     running_jobs = []
     finished_jobs = []
 
-    # 🔄 snapshot of memory after last successful allocation
     memory_snapshot = []
 
     while queue or running_jobs:
@@ -115,7 +114,7 @@ def compute_fragmentation(memory: List[MemoryBlock], jobs: List[Job]) -> int:
 # -------------------- Strategy Runner --------------------
 
 def run_strategy(name: str, strategy_func, jobs: List[Job], memory_template: List[MemoryBlock]):
-    print(f"\n🔧 Running {name} Allocation Simulation...")
+    print(f"\n Running {name} Allocation Simulation...")
     result, total_time, remaining, memory_state = simulate_allocation_with_safety(strategy_func, jobs, memory_template)
     job_count = len(result)
     avg_wait = sum(job.waiting_time for job in result) / job_count if job_count > 0 else 0
